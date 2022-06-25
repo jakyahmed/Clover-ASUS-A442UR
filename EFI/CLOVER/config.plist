@@ -87,7 +87,7 @@
 				<key>FixHDA</key>
 				<false/>
 				<key>FixHPET</key>
-				<false/>
+				<true/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
@@ -215,7 +215,7 @@
 		<key>#XMPDetection</key>
 		<string>-1</string>
 		<key>Arguments</key>
-		<string>-v debug=0x100 -wegnoegpu alcid=13 keepsyms=1 kext-dev-mode=1 nv_disable=1</string>
+		<string>-v debug=0x100 -wegnoegpu keepsyms=1 kext-dev-mode=1 nv_disable=1 -ath9565</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
@@ -342,20 +342,23 @@
 				<key>pci-aspm-default</key>
 				<integer>0</integer>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+			<dict>
+				<key>alc-delay</key>
+				<integer>1000</integer>
+				<key>alctcsel</key>
+				<data>AQAAAA==</data>
+				<key>layout-id</key>
+				<data>DQAAAA==</data>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>
-				AAAWWQ==
-				</data>
+				<data>AAAWWQ==</data>
 				<key>device-id</key>
-				<data>
-				FlkAAA==
-				</data>
+				<data>FlkAAA==</data>
 				<key>shikivga</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -372,10 +375,6 @@
 		<key>UseIntelHDMI</key>
 		<false/>
 	</dict>
-	<key>DisableDrivers</key>
-	<array>
-		<string>ApfsDriverLoader</string>
-	</array>
 	<key>GUI</key>
 	<dict>
 		<key>#ConsoleMode</key>
@@ -527,7 +526,7 @@
 		<key>ProvideConsoleGop</key>
 		<true/>
 		<key>ScreenResolution</key>
-		<string>1280x1024</string>
+		<string>1360x768</string>
 		<key>ShowOptimus</key>
 		<false/>
 		<key>Theme</key>
@@ -566,13 +565,9 @@
 		<array>
 			<dict>
 				<key>Find</key>
-				<data>
-				gAeoAqAF
-				</data>
+				<data>gAeoAqAF</data>
 				<key>Replace</key>
-				<data>
-				gAeoAjgE
-				</data>
+				<data>gAeoAjgE</data>
 			</dict>
 		</array>
 		<key>#RadeonDeInit</key>
@@ -588,12 +583,7 @@
 		<key>EDID</key>
 		<dict>
 			<key>#Custom</key>
-			<data>
-			AP///////wAGECGSAAAAAAASAQOAIRV4CunVmVlTjigmUFQAAAAB
-			AQEBAQEBAQEBAQEBAQEB3iGgcFCEHzAgIFYAS88QAAAY3iGgcFCE
-			HzAgIFYAS88QAAAAAAAA/gBXNjU3RwAxNTRXUDEKAAAA/gAjMz1I
-			ZYSq/wIBCiAgAJo=
-			</data>
+			<data>AP///////wAGECGSAAAAAAASAQOAIRV4CunVmVlTjigmUFQAAAABAQEBAQEBAQEBAQEBAQEB3iGgcFCEHzAgIFYAS88QAAAY3iGgcFCEHzAgIFYAS88QAAAAAAAA/gBXNjU3RwAxNTRXUDEKAAAA/gAjMz1IZYSq/wIBCiAgAJo=</data>
 			<key>#HorizontalSyncPulseWidth</key>
 			<string>0x11</string>
 			<key>#Inject</key>
@@ -627,15 +617,11 @@
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
+				<data>RXh0ZXJuYWw=</data>
 				<key>MatchOS</key>
 				<string>All</string>
 				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
-				</data>
+				<data>SW50ZXJuYWw=</data>
 			</dict>
 		</array>
 		<key>#FakeCPUID</key>
@@ -651,19 +637,13 @@
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
-				<data>
-				SGVhZHBob25lcwA=
-				</data>
+				<data>SGVhZHBob25lcwA=</data>
 				<key>MaskReplace</key>
-				<data>
-				/////wAAAAAAAAA=
-				</data>
+				<data>/////wAAAAAAAAA=</data>
 				<key>Name</key>
 				<string>VoodooHDA</string>
 				<key>Replace</key>
-				<data>
-				VGVsZXBob25lcwA=
-				</data>
+				<data>VGVsZXBob25lcwA=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -681,29 +661,21 @@
 				<key>Comment</key>
 				<string>Make all drives to be internal</string>
 				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
+				<data>RXh0ZXJuYWw=</data>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
-				</data>
+				<data>SW50ZXJuYWw=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>TRIM function for non-Apple SSDs</string>
 				<key>Find</key>
-				<data>
-				QVBQTEUgU1NEAA==
-				</data>
+				<data>QVBQTEUgU1NEAA==</data>
 				<key>Name</key>
 				<string>IOAHCIBlockStorage</string>
 				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAA==
-				</data>
+				<data>AAAAAAAAAAAAAA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -711,19 +683,13 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				AAQAAAQDAAAAAQAAIQMCBAQAAAAUAgAAAAEAAAAABAMQ
-				AAAAEAAAAAABAAAAAAAB
-				</data>
+				<data>AAQAAAQDAAAAAQAAIQMCBAQAAAAUAgAAAAEAAAAABAMQAAAAEAAAAAABAAAAAAAB</data>
 				<key>MatchOS</key>
 				<string>10.9,10.10,10.11</string>
 				<key>Name</key>
 				<string>AMD6000Controller</string>
 				<key>Replace</key>
-				<data>
-				BAAAABQCAAAAAQAAAAAEBAAEAAAEAwAAAAEAABECAQUA
-				AAAAAAAAAAAAAAAAAAAA
-				</data>
+				<data>BAAAABQCAAAAAQAAAAAEBAAEAAAEAwAAAAEAABECAQUAAAAAAAAAAAAAAAAAAAAA</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -731,17 +697,13 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				SEQgNnh4eA==
-				</data>
+				<data>SEQgNnh4eA==</data>
 				<key>MatchOS</key>
 				<string>10.12,10.13</string>
 				<key>Name</key>
 				<string>AMD6000Controller</string>
 				<key>Replace</key>
-				<data>
-				SEQgNjQ1MA==
-				</data>
+				<data>SEQgNjQ1MA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -749,13 +711,9 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				VUiJ
-				</data>
+				<data>VUiJ</data>
 				<key>MaskFind</key>
-				<data>
-				AAAA
-				</data>
+				<data>AAAA</data>
 				<key>Name</key>
 				<string>com.apple.kext.AMDSupport</string>
 				<key>Procedure</key>
@@ -763,9 +721,7 @@
 				<key>RangeFind</key>
 				<integer>10</integer>
 				<key>Replace</key>
-				<data>
-				sAHD
-				</data>
+				<data>sAHD</data>
 			</dict>
 		</array>
 		<key>AppleIntelCPUPM</key>
@@ -779,8 +735,6 @@
 		<key>EightApple</key>
 		<true/>
 		<key>KernelLapic</key>
-		<false/>
-		<key>KernelPm</key>
 		<false/>
 		<key>KernelXCPM</key>
 		<false/>
@@ -897,9 +851,7 @@
 		<key>MLB</key>
 		<string>C02032109R6DC771H</string>
 		<key>ROM</key>
-		<data>
-		+uS7VPKm
-		</data>
+		<data>+uS7VPKm</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
